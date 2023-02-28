@@ -52,7 +52,7 @@ export default class ListItem extends Component {
 
     return (
       <li className={`p-3 ${last ? '' : 'border-bottom'}`}>
-        <div className="d-flex flex-items-center">
+        <div className="d-flex flex-items-center" onClick={this.handleToggleExpanded}>
           <div className="mr-2" style={{ width: 16 }}>
             <EventIcon event={event} action={payload.action} />
           </div>
