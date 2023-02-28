@@ -16,6 +16,7 @@
   "dependencies": {
     "@primer/css": "^14.3.0",
     "@primer/octicons-react": "^9.6.0",
+    "config": "^3.3.9",
     "connect-sse": "^1.2.0",
     "copy-to-clipboard": "^3.3.1",
     "cors": "^2.8.5",
