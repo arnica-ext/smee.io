@@ -2,3 +2,6 @@ node_modules
 coverage
 public/*.min.*
 .env
+
+**/local.*
+env.sh

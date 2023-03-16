@@ -1,8 +1,10 @@
 # A temporary image that installs dependencies and
 # builds the production-ready front-end bundles.
 
-FROM node:16-alpine as bundles
+
+FROM --platform=linux/amd64 node:16-alpine as bundles
 WORKDIR /usr/src/smee.io
+
 COPY package*.json ./
 COPY webpack.config.js ./
 COPY .babelrc ./
@@ -13,7 +15,7 @@ RUN npm ci && npm run build && env NODE_ENV=production npm prune
 
 # --------------------------------------------------------------------------------
 
-FROM node:16-alpine
+FROM --platform=linux/amd64 node:16-alpine
 LABEL description="Smee.io"
 
 # Let's make our home
@@ -38,6 +40,6 @@ COPY --chown=node:node public ./public
 COPY --chown=node:node lib ./lib
 COPY --chown=node:node index.js ./index.js
 COPY --chown=node:node package*.json ./
-
+COPY --chown=node:node config ./config
 EXPOSE 3000
 CMD ["npm", "start"]
