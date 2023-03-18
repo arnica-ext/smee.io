@@ -24,7 +24,7 @@ module.exports = {
      */
     mode: Mode.allowed,
     list: {
-      local: {
+      protected: {
         password: 'password'
       },
       open: {
